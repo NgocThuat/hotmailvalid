@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Account Checker Tool</title>
+    <style>
+        /* 1. Set HTML and BODY to cover the entire screen */
+        html, body {
+            height: 100%; /* Occupy 100% of the viewport height */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling on the main page */
+        }
+
+        /* 2. Basic CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2d; /* Màu nền tối được chọn lại (Tối hơn #000000) */
+            color: #fff;
+            display: flex;
+            flex-direction: column; /* Arrange elements vertically */
+            /* QUAN TRỌNG: Dùng 'stretch' để iframe-container mở rộng tối đa chiều ngang */
+            align-items: stretch;
+        }
+
+        /* Header (Title) */
+        h1 {
+            color: #90ee90; /* Light Green color for the title */
+            margin: 20px auto 10px auto; /* Căn giữa thủ công */
+            font-size: 2em;
+            max-width: 1200px; /* Giới hạn chiều rộng như container */
+            width: 95%;
+            text-align: center; /* Đảm bảo tiêu đề căn giữa */
+        }
+
+        /* 3. Iframe wrapper container */
+        .iframe-container {
+            width: 95%; 
+            max-width: 1200px;
+            /* CĂN GIỮA VÀ CHIẾM TỐI ĐA CHIỀU CAO */
+            margin: 0 auto 10px auto; /* Căn giữa theo chiều ngang */
+            height: calc(100vh - 120px); 
+        }
+
+        /* 4. Iframe settings */
+        iframe {
+            width: 100%;
+            height: 100%; /* Iframe occupies the entire container */
+            border: 2px solid #404060;
+            border-radius: 8px;
+        }
+
+        /* 5. Tutorial Button */
+        .tutorial-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px; 
+            background-color: #42a5f5; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            /* Đảm bảo nút được căn giữa trên trang */
+            align-self: center;
+        }
+
+        .tutorial-button:hover {
+            background-color: #318ac8;
+        }
+
+        /* Media Query: Adjust for smaller screens if necessary */
+        @media (max-width: 768px) {
+             .iframe-container {
+                 height: calc(100vh - 150px); 
+             }
+        }
+    </style>
+</head>
+<body>
+    <h1>FREE CHECK LIVE & READ EMAIL</h1>
+
+    <div class="iframe-container">
+        <iframe 
+            src="https://hotmailvalid-checker.hf.space/?__theme=dark" 
+            frameborder="0"
+            title="Microsoft Account Checker"
+            allow="microphone">
+        </iframe>
+    </div>
+
+    <a href="#" class="tutorial-button" id="how-to-use-link" target="_blank">
+        ▶️ How to use (Video Guide)
+    </a>
+
+    <script>
+        // SCRIPT TO ATTACH YOUR TUTORIAL VIDEO LINK
+        const videoLink = "YOUR_VIDEO_GUIDE_LINK_HERE"; // <<< REPLACE THIS WITH YOUR LINK
+
+        document.getElementById('how-to-use-link').href = videoLink;
+
+        // Warning if the link has not been changed
+        if (videoLink === "YOUR_VIDEO_GUIDE_LINK_HERE") {
+             document.getElementById('how-to-use-link').style.backgroundColor = '#ffc107'; 
+             document.getElementById('how-to-use-link').innerText = "⚠️ Video Tutorial ⚠️"; 
+        }
+    </script>
+</body>
+</html>
